@@ -1,6 +1,6 @@
 import type { Denops } from "https://deno.land/x/denops_std@v3.8.1/mod.ts";
 import * as path from "https://deno.land/std@0.151.0/path/mod.ts";
-import { unnullish } from "https://deno.land/x/unnullish@v0.1.0/mod.ts";
+import { unnullish } from "https://deno.land/x/unnullish@v0.2.0/mod.ts";
 import * as buffer from "https://deno.land/x/denops_std@v3.8.1/buffer/mod.ts";
 import * as option from "https://deno.land/x/denops_std@v3.8.1/option/mod.ts";
 import {
@@ -80,7 +80,7 @@ export async function exec(
       scheme: "ginedit",
       expr: worktree,
       params: {
-        cached: unnullish(options.cached, () => "") ?? undefined,
+        cached: unnullish(options.cached, () => ""),
         commitish: options.commitish,
       },
       fragment: relpath,

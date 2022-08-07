@@ -4,7 +4,7 @@ import {
   isNumber,
   isString,
 } from "https://deno.land/x/unknownutil@v2.0.0/mod.ts";
-import { unnullish } from "https://deno.land/x/unnullish@v0.1.0/mod.ts";
+import { unnullish } from "https://deno.land/x/unnullish@v0.2.0/mod.ts";
 import * as itertools from "https://deno.land/x/itertools@v1.0.2/mod.ts";
 import * as ansiEscapeCode from "https://deno.land/x/ansi_escape_code@v0.1.2/mod.ts";
 import * as batch from "https://deno.land/x/denops_std@v3.8.1/batch/mod.ts";

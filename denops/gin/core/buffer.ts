@@ -1,5 +1,5 @@
 import type { Denops } from "https://deno.land/x/denops_std@v3.8.1/mod.ts";
-import { unnullish } from "https://deno.land/x/unnullish@v0.1.0/mod.ts";
+import { unnullish } from "https://deno.land/x/unnullish@v0.2.0/mod.ts";
 import * as option from "https://deno.land/x/denops_std@v3.8.1/option/mod.ts";
 import {
   format as formatBufname,
@@ -33,7 +33,7 @@ export async function format(
     scheme,
     expr: worktree,
     params: {
-      monochrome: unnullish(options.monochrome, () => "") ?? undefined,
+      monochrome: unnullish(options.monochrome, () => ""),
     },
     fragment: `${args.join(" ")}$`,
   });

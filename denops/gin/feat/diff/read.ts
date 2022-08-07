@@ -1,5 +1,5 @@
 import type { Denops } from "https://deno.land/x/denops_std@v3.8.1/mod.ts";
-import { unnullish } from "https://deno.land/x/unnullish@v0.1.0/mod.ts";
+import { unnullish } from "https://deno.land/x/unnullish@v0.2.0/mod.ts";
 import { ensureString } from "https://deno.land/x/unknownutil@v2.0.0/mod.ts";
 import * as vars from "https://deno.land/x/denops_std@v3.8.1/variable/mod.ts";
 import {
@@ -28,7 +28,7 @@ export async function read(
   }
   await exec(denops, bufnr, fragment, {
     worktree: expr,
-    commitish: unnullish(params?.commitish, ensureString) ?? undefined,
+    commitish: unnullish(params?.commitish, ensureString),
     flags: {
       ...params,
       commitish: undefined,

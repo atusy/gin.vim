@@ -1,5 +1,5 @@
 import type { Denops } from "https://deno.land/x/denops_std@v3.8.1/mod.ts";
-import { unnullish } from "https://deno.land/x/unnullish@v0.1.0/mod.ts";
+import { unnullish } from "https://deno.land/x/unnullish@v0.2.0/mod.ts";
 import * as buffer from "https://deno.land/x/denops_std@v3.8.1/buffer/mod.ts";
 import {
   builtinOpts,
@@ -23,7 +23,7 @@ export async function command(
   ]);
   return exec(denops, residue, {
     worktree: opts.worktree,
-    monochrome: unnullish(opts.monochrome, () => true) ?? undefined,
+    monochrome: unnullish(opts.monochrome, () => true),
     cmdarg: formatOpts(opts, builtinOpts).join(" "),
     mods,
   });
