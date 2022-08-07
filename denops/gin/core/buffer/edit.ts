@@ -71,7 +71,10 @@ export async function exec(
       fileencoding: options.encoding,
     },
   );
-  const [trimmed, decorations] = buildDecorationsFromAnsiEscapeCode(content);
+  const [trimmed, decorations] = await buildDecorationsFromAnsiEscapeCode(
+    denops,
+    content,
+  );
   await buffer.replace(denops, bufnr, trimmed, {
     fileformat,
     fileencoding,
